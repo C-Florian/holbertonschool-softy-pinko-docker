@@ -1,9 +1,7 @@
-# task1/Dockerfile
 FROM ubuntu:22.04
 
 RUN apt-get update && apt-get upgrade -y \
  && apt-get install -y python3 python3-pip \
- # Corrige l’erreur "This environment is externally managed" si besoin
  && rm -f /usr/lib/python*/EXTERNALLY-MANAGED || true \
  && pip3 install flask \
  && rm -rf /var/lib/apt/lists/*
